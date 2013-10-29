@@ -20,7 +20,7 @@ namespace Datos.Test
             list.Add(10);
 
             //assert
-            Assert.AreEqual(10, list.First().Value);
+            Assert.AreEqual(10, list.First.Value);
             
         }
 
@@ -35,8 +35,8 @@ namespace Datos.Test
             list.Add(15);
 
             //assert
-            Assert.AreEqual(5, list.First().Value);
-            Assert.AreEqual(15, list.Last().Value);
+            Assert.AreEqual(5, list.First.Value);
+            Assert.AreEqual(15, list.Last.Value);
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Datos.Test
             list.Add(15);
             list.Add(45);
 
-            var node = list.First();
+            var node = list.First;
 
             //assert
             Assert.AreEqual(5, node.Value);
@@ -101,8 +101,8 @@ namespace Datos.Test
 
             //assert
             Assert.AreEqual(false, list.Remove(99));
-            Assert.IsNull(list.First());
-            Assert.IsNull(list.Last());
+            Assert.IsNull(list.First);
+            Assert.IsNull(list.Last);
         }
 
         [Test]
@@ -116,8 +116,8 @@ namespace Datos.Test
 
             //assert
             Assert.AreEqual(true, list.Remove(5));
-            Assert.IsNull(list.First());
-            Assert.IsNull(list.Last());
+            Assert.IsNull(list.First);
+            Assert.IsNull(list.Last);
         }
 
         [Test]
@@ -133,8 +133,8 @@ namespace Datos.Test
 
             //assert
             Assert.AreEqual(true, list.Remove(5));
-            Assert.AreEqual(10, list.First().Value);
-            Assert.AreEqual(15, list.Last().Value);
+            Assert.AreEqual(10, list.First.Value);
+            Assert.AreEqual(15, list.Last.Value);
         }
 
         [Test]
@@ -150,9 +150,9 @@ namespace Datos.Test
 
             //assert
             Assert.AreEqual(true, list.Remove(10));
-            Assert.AreEqual(5, list.First().Value);
-            Assert.AreEqual(15, list.Last().Value);
-            Assert.AreEqual(15, list.First().Next.Value);
+            Assert.AreEqual(5, list.First.Value);
+            Assert.AreEqual(15, list.Last.Value);
+            Assert.AreEqual(15, list.First.Next.Value);
         }
 
         [Test]
@@ -168,9 +168,9 @@ namespace Datos.Test
 
             //assert
             Assert.AreEqual(true, list.Remove(15));
-            Assert.AreEqual(5, list.First().Value);
-            Assert.AreEqual(10, list.Last().Value);
-            Assert.AreEqual(10, list.First().Next.Value);
+            Assert.AreEqual(5, list.First.Value);
+            Assert.AreEqual(10, list.Last.Value);
+            Assert.AreEqual(10, list.First.Next.Value);
         }
         
     }

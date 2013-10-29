@@ -14,8 +14,8 @@ namespace Datos.Model
         {
         }
 
-        public void Add(int value) {
-            var node = new SingleLinkedListNode(value);
+        public void Add(int pValue) {
+            var node = new SingleLinkedListNode(pValue);
 
             if (_head == null)
             {
@@ -31,36 +31,32 @@ namespace Datos.Model
             }
         }
 
-        public SingleLinkedListNode First()
+        public SingleLinkedListNode First
         {
-            return _head;
+            get { return _head; } 
         }
 
-        public SingleLinkedListNode Last()
+        public SingleLinkedListNode Last
         {
-            return _tail;
+            get { return _tail; } 
         }
 
-        public bool Contains(int value)
+        public bool Contains(int pValue)
         {
             bool result = false;
 
             var node = _head;
 
-            while (node != null && node.Value != value)
-            {
+            while (node != null && node.Value != pValue)
                 node = node.Next;
-            }
 
             if (node != null)
-            {
                 result = true; 
-            }
 
             return result;
         }
 
-        public bool Remove(int value) {
+        public bool Remove(int pValue) {
             // returns true if the value was found and removed
             var node = _head;
             
@@ -68,7 +64,7 @@ namespace Datos.Model
                 return false; // no nodes in list
 
             // check _head first
-            if (node.Value == value)
+            if (node.Value == pValue)
             {
                 // check head and tail
                 if (node == _tail)
@@ -91,19 +87,14 @@ namespace Datos.Model
             }
 
             // loop through the next node in the list
-            while (node.Next != null && node.Next.Value != value)
-            {
+            while (node.Next != null && node.Next.Value != pValue)
                 node = node.Next;
-            }
 
             if (node.Next != null)
             {
                 // found the value 
                 if (node.Next == _tail)
-                {
-                    // reset tail
-                    _tail = node;
-                }
+                    _tail = node; // reset tail
 
                 // value found in middle of list
                 // reset next reference
@@ -131,7 +122,9 @@ namespace Datos.Model
             set { _nextnode = value; } 
         }
         
-        public int? Value { get { return _value; } }
+        public int? Value { 
+            get { return _value; } 
+        }
     }
 
     
