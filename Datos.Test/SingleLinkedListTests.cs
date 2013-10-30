@@ -16,10 +16,10 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(10);
 
-            //assert
+            // assert
             Assert.AreEqual(10, list.First.Value);
             
         }
@@ -30,11 +30,11 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(15);
 
-            //assert
+            // assert
             Assert.AreEqual(5, list.First.Value);
             Assert.AreEqual(15, list.Last.Value);
         }
@@ -45,14 +45,14 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(15);
             list.Add(45);
 
             var node = list.First;
 
-            //assert
+            // assert
             Assert.AreEqual(5, node.Value);
             Assert.AreEqual(15, node.Next.Value);
             Assert.AreEqual(45, node.Next.Next.Value);
@@ -65,12 +65,12 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(15);
             list.Add(45);
 
-            //assert
+            // assert
             Assert.AreEqual(true, list.Contains(5));
             Assert.AreEqual(true, list.Contains(15));
             Assert.AreEqual(true, list.Contains(45));
@@ -82,12 +82,12 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(15);
             list.Add(45);
 
-            //assert
+            // assert
             Assert.AreEqual(false, list.Contains(99));
         }
 
@@ -97,9 +97,9 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
 
-            //assert
+            // assert
             Assert.AreEqual(false, list.Remove(99));
             Assert.IsNull(list.First);
             Assert.IsNull(list.Last);
@@ -111,10 +111,10 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
 
-            //assert
+            // assert
             Assert.AreEqual(true, list.Remove(5));
             Assert.IsNull(list.First);
             Assert.IsNull(list.Last);
@@ -126,12 +126,12 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(10);
             list.Add(15);
 
-            //assert
+            // assert
             Assert.AreEqual(true, list.Remove(5));
             Assert.AreEqual(10, list.First.Value);
             Assert.AreEqual(15, list.Last.Value);
@@ -143,12 +143,12 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(10);
             list.Add(15);
 
-            //assert
+            // assert
             Assert.AreEqual(true, list.Remove(10));
             Assert.AreEqual(5, list.First.Value);
             Assert.AreEqual(15, list.Last.Value);
@@ -161,17 +161,16 @@ namespace Datos.Test
             // assemble
             var list = new SingleLinkedList();
 
-            //act
+            // act
             list.Add(5);
             list.Add(10);
             list.Add(15);
 
-            //assert
+            // assert
             Assert.AreEqual(true, list.Remove(15));
             Assert.AreEqual(5, list.First.Value);
             Assert.AreEqual(10, list.Last.Value);
             Assert.AreEqual(10, list.First.Next.Value);
-        }
-        
+        }       
     }
 }

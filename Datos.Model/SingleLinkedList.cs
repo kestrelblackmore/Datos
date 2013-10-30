@@ -92,7 +92,7 @@ namespace Datos.Model
 
             if (node.Next != null)
             {
-                // found the value 
+                // found the value in node.next
                 if (node.Next == _tail)
                     _tail = node; // reset tail
 
