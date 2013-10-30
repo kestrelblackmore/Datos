@@ -5,17 +5,17 @@ using System.Text;
 
 namespace Datos.Model
 {
-    public class SingleLinkedList
+    public class SingleLinkedList<T>
     {
-        private SingleLinkedListNode _head = null;
-        private SingleLinkedListNode _tail = null;
+        private SingleLinkedListNode<T> _head = null;
+        private SingleLinkedListNode<T> _tail = null;
 
         public SingleLinkedList()
         {
         }
 
-        public void Add(int pValue) {
-            var node = new SingleLinkedListNode(pValue);
+        public void Add(T pValue) {
+            var node = new SingleLinkedListNode<T>(pValue);
 
             if (_head == null)
             {
@@ -31,23 +31,23 @@ namespace Datos.Model
             }
         }
 
-        public SingleLinkedListNode First
+        public SingleLinkedListNode<T> First
         {
             get { return _head; } 
         }
 
-        public SingleLinkedListNode Last
+        public SingleLinkedListNode<T> Last
         {
             get { return _tail; } 
         }
 
-        public bool Contains(int pValue)
+        public bool Contains(T pValue)
         {
             bool result = false;
 
             var node = _head;
 
-            while (node != null && node.Value != pValue)
+            while (node != null && !EqualityComparer<T>.Default.Equals(node.Value, pValue))
                 node = node.Next;
 
             if (node != null)
@@ -56,7 +56,7 @@ namespace Datos.Model
             return result;
         }
 
-        public bool Remove(int pValue) {
+        public bool Remove(T pValue) {
             // returns true if the value was found and removed
             var node = _head;
             
@@ -64,7 +64,7 @@ namespace Datos.Model
                 return false; // no nodes in list
 
             // check _head first
-            if (node.Value == pValue)
+            if (EqualityComparer<T>.Default.Equals(node.Value, pValue))
             {
                 // check head and tail
                 if (node == _tail)
@@ -87,7 +87,7 @@ namespace Datos.Model
             }
 
             // loop through the next node in the list
-            while (node.Next != null && node.Next.Value != pValue)
+            while (node.Next != null && !EqualityComparer<T>.Default.Equals(node.Next.Value, pValue))
                 node = node.Next;
 
             if (node.Next != null)
@@ -105,7 +105,7 @@ namespace Datos.Model
             return false; // value not found in list
         }
 
-        public IEnumerable<int> Traverse()
+        public IEnumerable<T> Traverse()
         {
             var node = _head;
 
@@ -118,23 +118,23 @@ namespace Datos.Model
         }
     }
 
-    public class SingleLinkedListNode
+    public class SingleLinkedListNode<T>
     {
-        private SingleLinkedListNode _nextnode = null;
-        private int _value;
+        private SingleLinkedListNode<T> _nextnode = null;
+        private T _value;
 
-        public SingleLinkedListNode(int value)
+        public SingleLinkedListNode(T pValue)
         {
-            _value = value;
+            _value = pValue;
         }
 
 
-        public SingleLinkedListNode Next { 
+        public SingleLinkedListNode<T> Next { 
             get { return _nextnode; } 
             set { _nextnode = value; } 
         }
         
-        public int Value { 
+        public T Value { 
             get { return _value; } 
         }
     }

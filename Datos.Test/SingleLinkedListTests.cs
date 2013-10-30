@@ -14,7 +14,7 @@ namespace Datos.Test
         public void must_add_node_with_correct_value()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(10);
@@ -28,7 +28,7 @@ namespace Datos.Test
         public void head_and_tail_must_have_correct_values()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -43,7 +43,7 @@ namespace Datos.Test
         public void add_value_must_be_in_correct_order()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -63,7 +63,7 @@ namespace Datos.Test
         public void contains_finds_value_in_list()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -80,7 +80,7 @@ namespace Datos.Test
         public void contains_does_not_find_value_in_list()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -95,7 +95,7 @@ namespace Datos.Test
         public void remove_empty_list()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
 
@@ -109,7 +109,7 @@ namespace Datos.Test
         public void remove_one_node_in_list_with_only_one_node()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -124,7 +124,7 @@ namespace Datos.Test
         public void remove_first_node_in_list_with_multiple_nodes()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -141,7 +141,7 @@ namespace Datos.Test
         public void remove_node_in_middle_of_list_with_multiple_nodes()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -159,7 +159,7 @@ namespace Datos.Test
         public void remove_last_node_in_list_with_multiple_nodes()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
@@ -177,7 +177,7 @@ namespace Datos.Test
         public void iterate_through_entire_list_and_yield_results()
         {
             // assemble
-            var list = new SingleLinkedList();
+            var list = new SingleLinkedList<int>();
 
             // act
             list.Add(5);
