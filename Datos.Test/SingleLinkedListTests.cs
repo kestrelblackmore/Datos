@@ -171,6 +171,29 @@ namespace Datos.Test
             Assert.AreEqual(5, list.First.Value);
             Assert.AreEqual(10, list.Last.Value);
             Assert.AreEqual(10, list.First.Next.Value);
-        }       
+        }
+
+        [Test]
+        public void iterate_through_entire_list_and_yield_results()
+        {
+            // assemble
+            var list = new SingleLinkedList();
+
+            // act
+            list.Add(5);
+            list.Add(10);
+            list.Add(15);
+
+            var result = "";
+
+            foreach (var item in list.Traverse())
+            {
+                result += item.ToString();
+            }
+
+            // assert
+            Assert.AreEqual("51015", result);
+            
+        }
     }
 }

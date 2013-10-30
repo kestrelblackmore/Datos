@@ -104,12 +104,24 @@ namespace Datos.Model
 
             return false; // value not found in list
         }
+
+        public IEnumerable<int> Traverse()
+        {
+            var node = _head;
+
+            // loop through entire list
+            while (node != null)
+            {
+                yield return node.Value; // return value and execution to calling code
+                node = node.Next;
+            }
+        }
     }
 
     public class SingleLinkedListNode
     {
         private SingleLinkedListNode _nextnode = null;
-        private int? _value = null;
+        private int _value;
 
         public SingleLinkedListNode(int value)
         {
@@ -122,7 +134,7 @@ namespace Datos.Model
             set { _nextnode = value; } 
         }
         
-        public int? Value { 
+        public int Value { 
             get { return _value; } 
         }
     }
